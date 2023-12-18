@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="/TravelWebsite.css">
+    <script src="https://kit.fontawesome.com/bc044cb271.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+       <nav id="navBar">
+        <a href="TravelWebsite.html">
+            <img src="/Staybnb-img/images/logo.png" class="logo">
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="TravelWebsite.html" class="active">Những Nơi Phổ Biến</a></li>
+            <li><a href="Listing.html">Loại Hình Du Lịch</a></li>
+            <li><a href="Vehicle.html">Phương Tiện</a></li>
+        </ul>
+        <a href="register.html" class="register-btn">Register Now</a>
+        <a href="cart.html" class="register-btn">
+            <i class="fa fa-shopping-cart"></i> Cart
+        </a>
+        <a href="login.html" class="register-btn">Login</a>
+        <i class="fa-solid fa-bars" onclick="togglebtn()"></i>
+       </nav> 
+       <div class="container">
+        <h1>Điểm Đến Tiếp Theo Của Bạn?</h1>
+        <div class="search-bar">
+            <form>
+                <div class="Location-input">
+                    <label>Location</label>
+                    <input type="text" placeholder="Where Are You Going?">
+                </div>
+                <div>
+                    <label>Check in</label>
+                    <input type="text" placeholder="Add Date">
+                </div>
+                <div>
+                    <label>Check out</label>
+                    <input type="text" placeholder="Add Date">
+                </div>
+                <div>
+                    <label>Guest</label>
+                    <input type="text" placeholder="Add Guest">
+                </div>
+                <button type="submit"><img src="/Staybnb-img/images/search.png"></button>
+            </form>
+        </div>
+       </div>
+    </div>
+    <div class="container">
+        <h2 class="sub-title">Cách Thành Phố Lớn</h2>
+        <div class="exclusives">
+            <div>
+                <img src="/Staybnb-img/images/hanoi.jpg">
+                <span>
+                    <h3>Hà Nội</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/saigon.jpg">
+                <span>
+                    <h3>Sài Gòn</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/haiphong.jpg">
+                <span>
+                    <h3>Hải Phòng</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/danang.jpg">
+                <span>
+                    <h3>Đà Nẵng</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/khanhhoa.jpg">
+                <span>
+                    <h3>Khánh Hoà</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/nhatrang.jpg">
+                <span>
+                    <h3>Nha Trang</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/thanhhoa.jpg">
+                <span>
+                    <h3>Thanh Hoá</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/binhdinh.jpg">
+                <span>
+                    <h3>Bình Định</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/hue.jpg">
+                <span>
+                    <h3>Huế</h3>
+                    <p></p>
+                </span>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/namdinh.jpg">
+                <span>
+                    <h3>Nam Định</h3>
+                    <p></p>
+                </span>
+            </div>
+        </div>
+
+
+        <h2 class="sub-title">Địa Điểm Thịnh Hành</h2>
+        <div class="trending">
+            <div>
+                <img src="/Staybnb-img/images/thacbandoc.jpg">
+                <div class="trending-info">
+                    <h3>Thác Bản Dốc</h3>
+                    <p>Thác Bản Dốc ẩn chứa vẻ đẹp hoang sơ tại Cao Bằng, Việt Nam. Nước trắng xóa rơi từ đỉnh núi, tạo nên cảnh quan hùng vĩ giữa rừng núi thơ mộng. Điểm đến lý tưởng cho những người muốn tận hưởng bản dốc nước trong lành và hòa mình vào vẻ đẹp tự nhiên tinh khôi.</p>
+                </div>
+                <h3>Cao Bằng</h3>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/vinhhalong.jpg">
+                <div class="trending-info">
+                    <h3>Vịnh Hạ Long</h3>
+                    <p>Vịnh Hạ Long, tọa lạc ở vùng Đông Bắc Việt Nam, là một trong những điểm du lịch nổi tiếng và được UNESCO công nhận là Di sản Thế giới. Với hơn 1,600 hòn đảo và đỉnh núi kỳ vĩ, Vịnh Hạ Long là một bức tranh thiên nhiên hùng vĩ và quyến rũ. Du khách đến đây sẽ được trải nghiệm cuộc sống trên biển, thăm các hang động kỳ bí, và ngắm cảnh hoàng hôn tuyệt vời trên thuyền độc đáo. Vịnh Hạ Long là biểu tượng văn hóa và du lịch của Việt Nam, thu hút hàng triệu du khách mỗi năm.</p>
+                </div>
+                <h3>Quảng Ninh</h3>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/sapa.jpg">
+                <div class="trending-info">
+                    <h3>Sapa</h3>
+                    <p>Sapa, nằm ở vùng cao miền núi phía Bắc Việt Nam, là điểm đến hấp dẫn với cảnh sắc ngoạn mục, đồng ruộng bậc thang và văn hóa dân tộc độc đáo. Với khí hậu mát mẻ quanh năm, Sapa thu hút du khách bởi những chuyến trekking qua những con đường đẹp như tranh, thăm các bản làng truyền thống và tận hưởng hương vị ẩm thực độc đáo. Sapa là điểm đến lý tưởng để tận hưởng bản sắc thiên nhiên và văn hóa đặc sắc của dân tộc thiểu số Việt Nam.</p>
+                </div>
+                <h3>Lào Cai</h3>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/saobeach.jpg">
+                <div class="trending-info">
+                    <h3>Sao Beach</h3>
+                    <p>Sao Beach, nằm trên đảo Phú Quốc, Việt Nam, là bãi biển tuyệt vời với cát trắng mịn và nước biển trong xanh. Được biết đến với vẻ đẹp huyền bí, Sao Beach là điểm đến thuận lợi cho những người muốn tận hưởng bãi biển tinh khiết, nghỉ ngơi và thưởng thức ẩm thực độc đáo của đảo ngọc xinh đẹp này.</p>
+                </div>
+                <h3>Phú Quốc</h3>
+            </div>
+        </div>
+
+        <div class="cta"> <!--Call to action-->
+            <h3>Biến Ước Muốn <br>Thành Sự Thật</h3>
+            <p>Cơ hội trải nghiệm du lịch <br>Ngay trong tầm tay bạn</p>
+            <a href="#" class="cta-btn">Know More</a>
+        </div>
+
+
+        <h2 class="sub-title">Giải Đáp Thắc Mắc</h2>
+        <div class="stories">
+            <div>
+                <img src="/Staybnb-img/images/story-1.png">
+                <p>Nên mang những gì khi đi du lịch 1 mình?</p>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/story-2.png">
+                <p>Cần chuẩn bị những gì khi đi du lịch lần đầu?</p>
+            </div>
+            <div>
+                <img src="/Staybnb-img/images/story-3.png">
+                <p>Tôi cần chi phí bao nhiêu để có thể đi du lịch?</p>
+            </div>
+        </div>
+        <a href="TravelWebsite.html" class="start-btn">Còn chần chờ gì nữa?</a>
+        <hr>
+        <div class="about-msg">
+            <h2>About Staybnb</h2>
+            <p>Staybnb không chỉ là một nền tảng tìm kiếm thông tin địa điểm du lịch mà còn là nguồn động viên, đưa ra gợi ý và tạo ra cơ hội để mọi người khám phá những vùng đất mới mẻ và thú vị tại Việt Nam. Chúng tôi tự hào là cầu nối giữa những người muốn tìm kiếm những trải nghiệm độc đáo với các địa điểm tuyệt vời.
+                Sứ mệnh của chúng tôi không chỉ là đơn thuần giới thiệu thông tin về địa điểm, mà còn là đồng hành, hỗ trợ và tạo điều kiện để mọi người có thể thực hiện những hành trình đáng nhớ. Chúng tôi tin rằng mỗi địa điểm du lịch trên nền tảng là một cơ hội để mọi người kết nối với văn hóa, lịch sử và vẻ đẹp đặc trưng của Việt Nam.
+                Dù bạn là người đam mê du lịch đồng hành, gia đình trẻ tìm kiếm kỷ niệm, hay nhóm bạn tìm kiếm phiêu lưu mới, Staybnb cam kết mang lại trải nghiệm độc đáo và dịch vụ chất lượng. Hãy để chúng tôi giúp bạn khám phá và tận hưởng những khoảnh khắc ý nghĩa tại mỗi góc cạnh của Việt Nam, đất nước xinh đẹp chữ S.
+            </p>
+        </div>
+
+        <div class="footer">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <hr>
+            <p>Copyright © 2023, Pham Gia Quy</p>
+        </div>
+    </div>
+
+    <script src="/js/TravelWebsite.js"></script>
+</body>
+</html>
