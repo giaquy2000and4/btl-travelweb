@@ -1,7 +1,7 @@
 // Giả lập dữ liệu đăng ký từ trước
 const registeredUsers = [
     {
-      email: 'nguyen@email.com',
+      email: 'quy@gmail.com',
       password: '1234' 
     }
   ];
@@ -68,7 +68,7 @@ const registeredUsers = [
       alert('Đăng nhập thành công!');
       
       // Redirect về trang chủ
-      window.location.href = 'TravelWebsite.html';
+      window.location.href = 'index.html';
     
     }
     

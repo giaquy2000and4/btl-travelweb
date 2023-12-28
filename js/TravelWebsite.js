@@ -56,86 +56,92 @@ function mfnc() {
 
 
 
-
-
-//     // Lấy danh sách các phần tử nhà
-// const houses = document.querySelectorAll('.house'); 
-
-// // Lấy các phần tử filter
-// const filterCulture = document.getElementById('filter-culture');
-// const filterArt = document.getElementById('filter-art');
-// const filterNature = document.getElementById('filter-nature');
-// const filterFood = document.getElementById('filter-food');
-// const filterSport = document.getElementById('filter-sport');
-
-// // Hàm cập nhật số lượng các nhà phù hợp với filter
-// function updateFilterCount(filterId) {
-
-//   let count = 0;
   
-//   // Đếm số nhà thỏa mãn filter đó
-//   houses.forEach(house => {
-//     if (house.classList.contains(filterId)) {
-//       count++;
-//     }
-//   });
+// ----------------cart----------------------------
+const btn = document.querySelectorAll("#read-more-btn")
+btn.forEach(function(button,index){
+  button.addEventListener("click",function(event){
+    var btnItem = event.target
+    var product = btnItem.parentElement
+    var productName = product.querySelector("p").innerText
+    var productPrice = product.querySelector("span").innerText
+    addCart(btnItem,product,productName,productPrice)
+  })
+})
 
-//   // Cập nhật số lượng vào span
-//   document.getElementById(filterId).querySelector('span').innerText = `(${count})`;
-// }
+function addCart(btnItem,product,productName,productPrice){
+  var addtr = document.createElement("tr")
+  var cartItem = document.querySelectorAll("tbody tr")
+  for(var i=0;i<cartItem.length;i++){
+    var productSelect = document.querySelectorAll(".title")
+    if(productSelect[i].innerHTML == productName){
+      alert("Chuyến đi của bạn đã có trong giỏ hàng")
+      return
+    }
+  }
+  var trcontent = '<tr><td class="title">'+productName+'</td><td><p><span class="prices">'+productPrice+'</span><sub>đ</sub></p></td><td><input type="number" value="1" min="1"></td><td><span class="delete-cart">Delete</span></td></tr>'
+  addtr.innerHTML = trcontent
+  var cartTable = document.querySelector("tbody")
+  cartTable.append(addtr)
+  carttotal()
+  deleteCart()
+}
 
-// // Hàm lọc danh sách nhà
-// function filter() {
-  
-//   houses.forEach(house => {
-    
-//     // Ẩn tất cả nhà đi
-//     house.style.display = 'none';
-    
-//     // Lặp qua các filter đang được check
-//     document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-    
-//       // Nếu nhà thỏa filter thì hiển thị
-//       if(house.classList.contains(checkbox.id)) {
-//         house.style.display = 'block';
-//       }
-    
-//     });
-    
-//   });
-  
-// }
+function carttotal(){
+  var cartItem = document.querySelectorAll("tbody tr")
+  itemPriceTotal = 0
+  for(var i=0;i<cartItem.length;i++){
+    var inputValue = cartItem[i].querySelector("input").value
+    var productPrice = cartItem[i].querySelector(".prices").innerHTML
+    itemMultiple = inputValue*productPrice
+    itemPriceTotal = itemPriceTotal + itemMultiple
+  }
+  var total = document.querySelector(".price-total span")
+  var cartPrice = document.querySelector(".cart-icon span")
+  total.innerHTML = itemPriceTotal.toLocaleString('de-DE')
+  cartPrice.innerHTML = itemPriceTotal.toLocaleString('de-DE')
+  inputChange()
+}
 
-// // Sự kiện khi click vào filter
-// filterCulture.addEventListener('click', () => {
-//   updateFilterCount(filterCulture.id);  
-//   filter();
-// });
+// --------------delete cart items------------------------
+function deleteCart(){
+  var cartItem = document.querySelectorAll("tbody tr")
+  for(var i=0;i<cartItem.length;i++){
+      var productSelect = document.querySelectorAll(".delete-cart")
+      productSelect[i].addEventListener("click",function(event){
+          var cartDelete = event.target
+          var cartItemDelete = cartDelete.parentElement.parentElement
+          cartItemDelete.remove()
+          carttotal()
+      })
+  }
+}
 
-// filterArt.addEventListener('click', () => {
-//   updateFilterCount(filterArt.id);
-//   filter();  
-// });
-
-// filterNature.addEventListener('click', () => {
-//     updateFilterCount(filterCulture.id);  
-//     filter();
-//   });
-
-
-//   filterFood.addEventListener('click', () => {
-//     updateFilterCount(filterCulture.id);  
-//     filter();
-//   });
-
-//   filterSport.addEventListener('click', () => {
-//     updateFilterCount(filterCulture.id);  
-//     filter();
-//   });
-
-
+const purchaseBtn = document.querySelector(".purchase-btn");
+purchaseBtn.addEventListener("click",function(){
+  alert("Cảm ơn bạn vì đã tin tưởng sử dụng dịch vụ của chúng tôi");
+})
 
 
+const cartbtn = document.querySelector(".fa-xmark")
+const cartshow = document.querySelector(".fa-shopping-cart")
+cartshow.addEventListener("click",function(){
+  document.querySelector(".cart").style.right = "0"
+})
+cartbtn.addEventListener("click",function(){
+  document.querySelector(".cart").style.right = "-100%"
+})
+
+function inputChange(){
+  var cartItem = document.querySelectorAll("tbody tr")
+  console.log(cartItem)
+  for(var i=0;i<cartItem.length;i++){
+    var inputValue = cartItem[i].querySelector("input")
+    inputValue.addEventListener("change",function(){
+      carttotal()
+    })
+  }
+}
 
 
 

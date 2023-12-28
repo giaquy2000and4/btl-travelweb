@@ -8,10 +8,13 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(Staybnb-img/images/banner.png); /*Thêm ảnh cho phần header*/
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(Staybnb-img/images/1325121.png); /*Thêm ảnh cho phần header*/
     background-size: cover;
     background-position: center;
 }
+body {
+    background-color: #ffb1bf;
+  }
 
 nav{
     display: flex;  /*Làm cho các phần tử trong nav đứng ngang nhau*/
@@ -49,6 +52,7 @@ nav{
 .register-btn:hover {
     background: #ff5361; /* Đổi màu nền đen khi hover */
     color: #fff; /* Đổi màu chữ trắng */
+    transition: all 0.3s ease;
   }
 
 
@@ -165,7 +169,7 @@ nav{
     transition: transform 0.3s ease;
 }
 .trending img:hover{
-    transform: translateY(10px);
+    transform: translateY(-10px);
 }
 .trending-info p{
     font-size: 16px;
@@ -270,6 +274,7 @@ nav{
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 26px;
+    font-weight: 900;
 }
 
 .start-btn{
@@ -337,23 +342,25 @@ nav{
 .footer p{
     padding: 15px;
 }
-
-.active{
+.nav-links li a {
     position: relative;
-}
-
-
-.active::after{
-    content: '';
-    background: #fff;
-    width: 25px;
+  }
+  
+  .nav-links li a:after {
+    content: "";
+    position: absolute; 
+    left: 0;
+    bottom: -5px;
+    width: 0; 
     height: 2px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -12px;
-    border-radius: 2px;
-}
+    background-color: #ff5361;
+    transition: width 0.3s; 
+  }
+  
+  .nav-links li a:hover:after {
+    width: 100%;
+  }
+
 nav .fa-bars{
     display: none;
 }
@@ -469,6 +476,11 @@ nav .fa-bars{
     background: #ff5361;
     color: #fff;
 }
+.navbar-white .register-btn:hover{
+    background: #fc3748; /* Đổi màu nền đen khi hover */
+    color: #fff; /* Đổi màu chữ trắng */
+    transition: all 0.3s ease;
+}
 nav.navbar-white .fa-bars{
     color: #000;
 }
@@ -499,12 +511,33 @@ nav.navbar-white .fa-bars{
     padding: 30px 0;
     border-top: 1px solid #ccc;
 }
+.extra-info {
+    display: none;
+}
+#read-more-btn{
+    background: #ff5361; /*Tạo màu nền cho button Register*/
+    color: #fff; /*Đổi màu chữ Resiger thành màu đen*/
+    padding: 8px 20px; /*Đệm thêm cho button Register*/
+    border-radius: 20px; /*Bo tròn cho phần button*/
+    text-decoration: none; /*Bỏ style mặc đỉnh của thẻ anchor (Dấu gạch dưới chân)*/
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+#read-more-btn:hover{
+    background: #fc3748; /* Đổi màu nền đen khi hover */
+    color: #fff; /* Đổi màu chữ trắng */
+    transition: all 0.3s ease;
+}
 .house-img{
     flex-basis: 40%;
 }
 .house-info{
     flex-basis: 59%;
     color:#555  
+}
+.house-info a{
+    text-decoration: none;
 }
 
 .house-img img{
@@ -524,6 +557,7 @@ nav.navbar-white .fa-bars{
 }
 .house-price {
     text-align: right;
+    font-size: 20px;
 }
 .house-price h4{
     font-size: 20px;
@@ -670,6 +704,7 @@ nav.navbar-white .fa-bars{
     margin: 20px 0 50px;
 }
 .check-form{
+    
     margin: 30px 0;
     background: #fff;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -691,14 +726,19 @@ nav.navbar-white .fa-bars{
     outline: none;
 }
 .check-form button{
+    cursor: pointer;
     background: #ff5361;
     border: 0;
     outline: none;
-    padding: 18px;
-    width: 350px;
+    padding: 20px 20px;
     border-radius: 8px;
     font-size: 16px;
     flex: 1;
+}
+.check-form button:hover{
+    background: #f7293a;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 .guest-field{
     flex: 1;
@@ -769,6 +809,100 @@ nav.navbar-white .fa-bars{
     padding: 15px 50px;
     border: 1px solid #ff5361;
     border-radius: 8px;
+}
+/* ----------------------cart--------------------------- */
+.cart{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.cart tbody tr td:first-child{
+    display: flex;
+    align-items: center;
+}
+.cart tbody tr td:last-child{
+    cursor: pointer;
+}
+.cart img{
+    width: 70px;
+}
+.cart input{
+    width: 30px;
+    outline: none;
+}
+.cart h2{
+    margin-bottom: 30px;
+}
+.cart table{
+    width: 100%;
+}
+.cart table thead tr th:first-child{ /*Nhắm đến phần từ đầu tiên còn các phần tử sau dùng cú pháp nth-child(vị trí phần tử)*/
+    text-align: left;
+}
+.cart table tr td{
+    border-bottom: 3px solid #ddd;
+    padding: 12px 0;
+}
+.price-total p{
+    font-weight: bold;
+}
+.price-total{
+    text-align: right;
+}
+.cart table thead tr th:last-child{ /*Nhắm đến phần từ đầu tiên còn các phần tử sau dùng cú pháp nth-child(vị trí phần tử)*/
+    text-align: right;
+}
+.cart table tbody tr td:last-child{ /*Nhắm đến phần từ đầu tiên còn các phần tử sau dùng cú pháp nth-child(vị trí phần tử)*/
+    text-align: right;
+}
+.cart{
+    position: fixed;
+    height: 100vh;
+    width: 400px;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+    background-color: #ddd;
+    overflow-y: scroll;
+    right: -100%;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+.cart i{
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    font-size: 30px;
+}
+.cart button{
+    padding: 8px 20px;
+    background: #ff5361;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cart button:hover{
+    background-color:#27fa6e;
+    color: #fff;
+}
+.cart-icon{
+    cursor: pointer;
+}
+.cart-icon{
+    background: #ff5361;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.cart-icon:hover{
+    background: #fc3748; /* Đổi màu nền đen khi hover */
+    color: #fff; /* Đổi màu chữ trắng */
+    transition: all 0.3s ease;
 }
 
 /* -----------------media querry for house details----------------- */
